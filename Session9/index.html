@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.hide{
+			display: none;
+		}
+		.show-content{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" class="txtContent" value="">
+	<button class="btn">Click</button>
+	<h1 class="show"></h1>
+	<div class="wrap">
+		Nội dung trong thẻ
+		<h2>Phần tử thẻ H2</h2>
+	</div>
+	<button class="btn-show">Show</button>
+	<button class="btn-hide">Hide</button>
+	<button class="btn-toggle">Toggle</button>
+	<button class="btn-css">Add CSS</button>
+	<div class="hide">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Molestias repellendus qui iusto iste commodi numquam nemo nam quis deleniti, id inventore, illo? Quo harum quod distinctio mollitia adipisci quibusdam id.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Molestias repellendus qui iusto iste commodi numquam nemo nam quis deleniti, id inventore, illo? Quo harum quod distinctio mollitia adipisci quibusdam id.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Molestias repellendus qui iusto iste commodi numquam nemo nam quis deleniti, id inventore, illo? Quo harum quod distinctio mollitia adipisci quibusdam id.</p>
+	</div>
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script>
+		// JavaScript
+		// document.getElementsByClassName("btn")[0].onclick = function(){
+		// 	alert("JavaScript Clicked!");
+		// }
+		// Cách 1
+		// $(document).ready(function() {
+		// 	// Viết code jQuery ở đây
+		// })
+		// Cách 2
+		$(function(){
+			// Viết code jQuery ở đây
+			$(".btn").click(function() {
+				alert("Clicked!");
+			})
+			$(".txtContent").keyup(function(){
+				$(".show").text($(".txtContent").val());
+			})
+			var txt = $(".wrap").text();
+			var html = $(".wrap").html();
+			console.log(txt);
+			console.log(html);
+			$(".wrap").attr("id", "new-id");
+
+			$(".btn-show").click(function(event) {
+				$(".hide").addClass("show-content");
+			});
+			$(".btn-hide").click(function(event) {
+				$(".hide").removeClass("show-content");
+			});
+			$(".btn-toggle").click(function(event) {
+				$(".hide").toggleClass("show-content");
+			});
+			$(".btn-css").click(function(){
+				$(".hide").css({
+					"color": "red"
+				})
+			})
+		})
+	</script>
+</body>
+</html>

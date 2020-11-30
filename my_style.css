@@ -1,0 +1,47 @@
+#name{
+	font-size: 30px;
+}
+#container #header #left{
+	border: 1px solid black;
+	float: left;
+	height: 50px;
+	width: 50px;
+	font-size: 30px;
+	text-align: center;
+	border-radius: 30%;
+	font-weight: bold;
+	background-color: red;
+}
+#container #header #name span{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 50px;
+
+}
+#container #header #right{
+	border: 1px solid black;
+	float: left;
+	height: 50px;
+	width: 50px;
+	font-size: 30px;
+	text-align: center;
+	border-radius: 30%;
+	font-weight: bold;
+	background-color: yellow;
+}
+#container #ads{
+	background-color: #8abcd1;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+}
+#container #ads p{
+	color: #d0d98b;
+}
+#navbar{
+	
+}
+.KM a{
+	font-weight: bold;
+	color: black;
+}

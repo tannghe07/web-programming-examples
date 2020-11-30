@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Class - Object</title>
+</head>
+<body>
+	<script>
+		// Định nghĩa lớp mô tả thực thể Sinh viên
+		class Student {
+			// Hàm khởi tạo
+			constructor(id, name, address, email, phone, birthday) {
+				// Khai báo thuộc tính của đối tượng sinh viên (bản chất là khái báo biến)
+				// từ khóa this đại diện cho đối tượng sinh viên
+				// validate 5 kí tự, bắt đầu chữ HOA và 4 số
+				this.id = id;
+				// TEN IN HOA KHONG DAU
+				this.name = name;
+				this.address = address;
+				// Email đúng định dạng
+				this.email = email;
+				// SĐT đúng định dạng
+				this.phone = phone;
+				// Ngày sinh đúng định dạng ngày tháng
+				this.birthday = birthday;
+			}
+			// GETTER/SETTER
+			setId(id) {
+				if (!(/^[A-Z]\d{4}$/.test(id)))
+					throw 'Mã sinh viên sai định dạng!';
+				this.id = id;
+			}
+			getId() {
+				return this.id;
+			}
+			setName(name) {
+				let check = /^[A-Z\s]+$/.test(name);
+				if (!check)
+					throw 'TÊN PHẢI NHẬP IN HOA';
+				this.name = name;
+			}
+			getName() {
+				return this.name;
+			}
+			setAddress(address) {
+				this.address = address;
+			}
+			getAddress() {
+				return this.address;
+			}
+			setEmail(email) {
+				if (!(/^\w+@\w+.*?\.[a-z]{2,5}$/.test(email)))
+					throw 'Email sai định dạng!';
+				this.email = email;
+			}
+			getEmail() {
+				return this.email;
+			}
+			setPhone(phone) {
+				if (!(/^(0[98753])\d{8}$/.test(phone)))
+					throw 'Số điện thoại sai định dạng!';
+				this.phone = phone;
+			}
+			setBirthday(birthday) {
+				if (!(/^\d{2}\/\d{2}\/\d{4}$/.test(birthday)))
+					throw 'Ngày tháng chưa đúng định dạng!';4
+				this.birthday = birthday;
+			}
+			getBirthday(){
+				return this.birthday;
+			}
+
+
+			// Định nghĩa các hành vi (chính là các hàm)
+			hello() {
+				console.log("Xin chào các bạn!");
+			}
+			info() {
+				console.log("Mã sv: " + this.id);
+				console.log("Tên sv: " + this.name);
+				console.log("Đ/c: " + this.address);
+			}
+		}
+
+		// Sử dụng class khởi tạo thành Object (đối tượng cụ thể)
+		var students = [];
+		// 	Array.push(item): hàm đẩy 1 phần tử vào cuối mảng
+
+		var flag = true;
+		var menus =  "";
+		// Không thêm trùng mã sinh viên
+		menus += "1. Thêm sinh viên\n";
+		menus += "2. Hiển thị danh sách sinh viên\n";
+		menus += "3. Cập nhật thông tin sinh viên\n";
+		menus += "4. Xóa một đối tượng sinh viên\n";
+		menus += "5. Thoát";
+		while (flag) {
+			var chon = prompt(menus);
+			switch (chon) {
+				case "1":
+					var st = new Student();
+					/* 
+					Array.find(): hàm tìm kiếm trong mảng
+					Trả về Object nếu tìm thấy, ngược lại trả về undefined
+
+					x => x.id == id <=> function(x) {
+						if (x.id == id) {
+							return x;
+						}
+					}
+					*/
+					var invalid = true;
+					// Kiểm tra nếu trùng id thì nhập lại id
+					do {
+						try {
+							st.setId(prompt("Nhập mã sinh viên"));
+							invalid = true;
+						} catch(e){
+							alert(e);
+							invalid = false;
+						}
+					} while (!invalid)
+					do {
+						try {
+							st.setName(prompt("Nhập tên sinh viên"));
+							invalid = true;
+						} catch(e){
+							alert(e);
+							invalid = false;
+						}
+					} while (!invalid)
+					do {
+						try {
+							st.setEmail(prompt("Nhập email"));
+							invalid = true;
+						} catch(e){
+							alert(e);
+							invalid = false;
+						}
+					} while (!invalid)
+
+					// do {
+					// 	id = prompt("Nhập mã sinh viên");
+					// } while (students.find(x => x.id == id) != undefined)
+					students.push(st);
+					break;
+				case "2":
+					console.clear();
+					// Duyệt mảng sinh viên
+					for (var item of students) {
+						item.info();
+					}
+					break;
+				case "3":
+					var idEdit = prompt("Nhập mã sinh viên cần sửa");
+					// Tìm theo mã đã nhập
+					var stEdit = students.find(x => x.id == idEdit);
+					// Kiểm tra tìm được hay không
+					if (stEdit != undefined) {
+						// cập nhật
+						stEdit.name = prompt("Tên sinh viên");
+						stEdit.address = prompt("Địa chỉ");
+						// Cập nhật lại vào mảng
+						students = students.map(st => {
+							if (st.id == stEdit.id) {
+								st = stEdit
+							}
+							return st;
+						});
+					} else {
+						alert("Mã sinh viên không tồn tại!");
+					}
+					break;
+				case "4":
+					var idDel = prompt("Nhập mã sinh viên cần xóa");
+					// Tìm vị trí 
+					var index = students.findIndex(x => x.id == idDel);
+					if (index >= 0){
+						// cắt bỏ 1 phần tử tại vị trí index
+						students.splice(index, 1);
+					} else {
+						alert("Mã sinh viên không tồn tại!")
+					}
+					break;
+				case "5":
+					// confirm(): hàm mở hộp thoại xác nhận
+					// người dùng có 2 lựa chọn là OK | Cancel
+					// tương đương hàm confirm() sẽ trả về kết quả là true/false
+					var check = confirm("Bạn có muốn thoát không?");
+					if (check == true) {
+						flag = false;
+					}
+					// Viết tắt của if...else
+					// biểu_thức_đk ? đk_đúng : đk_sai
+					// Nếu check == true thì gán flag = false còn không thì gán flag = true
+					// flag = check ? false : true;
+					break;
+				default:
+					alert("Bạn chọn sai chức năng!");
+					break;
+			}
+		}
+
+	</script>
+</body>
+</html>

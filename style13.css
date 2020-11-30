@@ -1,0 +1,121 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+[class*='col']{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+.fa.fa-bars{
+	font-size: 20px;
+}
+.fa.fa-youtube-play{
+	color: red;
+	font-size: 20px;
+}
+.logo p{
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+}
+.search{
+	width: 70%;
+	margin: 0;
+}
+.search input{
+	width: 100%;
+	margin: 10px 0 10px 0;
+}
+.fa.fa-search{
+	background-color: lightgrey;
+	padding: 5px 20px 5px 20px;
+	border: 1px solid black;
+}
+.menu1{
+	justify-content: space-between;
+}
+.menu1 ul{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0;
+	padding-bottom: 0;
+}
+.menu1 ul li{
+	list-style-type: none;
+	width: 25%;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+.menu1 ul li h4{
+	width: 50%;
+	color: white;
+	background-color: blue;
+	border-radius: 50%;
+}
+
+/*--------main--------*/
+
+.main{
+	margin-top: 20px;
+}
+.left{
+	align-items: flex-start;
+}
+.left ul{
+	width: 100%;
+}
+.left ul li{
+	list-style-type: none;
+	text-align: center;
+	padding: 20px 0 20px 0;
+}
+.left ul li p{
+	font-size: 15px;
+}
+.fa.fa-home{
+	color: red;
+}
+.left i{
+	font-size: 20px;
+}
+.col-md-11.right{
+	background-color: lightgrey;
+}
+.right{
+	justify-content: space-between;
+	align-items: flex-start;
+	padding-top: 20px;
+}
+.right > .row{
+	margin-top: 20px;
+}
+.right .col-md-3 iframe{
+	width: 100%;
+}
+.user{
+	width: 20%;
+	padding: 8px;
+}
+.user img{
+	width: 80%;
+	border-radius: 50%;
+	margin-left: 5px;
+}
+.about{
+	width: 80%;
+}
+.about p{
+	font-size: 15px;
+	margin: 0 10px 0 0;
+}
+.title{
+	font-weight: bold;
+}

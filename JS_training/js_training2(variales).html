@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>work with variables</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<script>
+		var a=1, b=2, c=a+b;
+		document.getElementById("demo").innerHTML=
+		"the result is: " + c;
+	</script>
+
+
+	<p>if you put a number in quotes(dau ngoac don hoac kep), the rest of the numbers will be treated as strings, and concatenated</p>
+	<p>The result of "1" + 2 + 3 is:</p>
+	<p id="demo2"></p>
+	<p>The result of 1 + 2 + "3" is:</p>
+	<p id="demo3"></p>
+	<p>js operators</p>
+	<p id="demo4"></p>
+	<p>js operators with string</p>
+	<p id="demo5"></p>
+
+
+	<script>
+		var x="1" + 2 + 3;
+		var y=1 + 2 + "3";
+		var a=10;
+		a+=5;
+		var s="have ";
+		s+="a nice day!";
+
+		document.getElementById("demo2").innerHTML=x;
+		document.getElementById("demo3").innerHTML=y;
+		document.getElementById("demo4").innerHTML=a;
+		document.getElementById("demo5").innerHTML=s;
+	</script>
+
+
+
+</body>
+</html>

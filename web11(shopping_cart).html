@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ecommerce Website Design</title>
+	<link rel="stylesheet" type="text/css" href="style8.css">
+	<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+</head>
+<body>
+
+		<div class="container">
+			<div class="navbar">
+				<div class="logo">
+					<img src="image/logo.png" width="125px">
+				</div>
+				<nav>
+					<ul id="menuitems">
+						<li><a href="">Home</a></li>
+						<li><a href="">Products</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">Account</a></li>
+					</ul>
+				</nav>
+				<img src="image/cart.png" width="30px" height="30px">
+				<img src="image/menu.png" class="menu-icon" onclick="menutoggle()">
+			</div>
+		</div>
+
+	<!-------- cart items details -------->
+
+	<div class="small-container cart-page">
+		<table>
+			<tr>
+				<th>Product</th>
+				<th>Quantity</th>
+				<th>Subtotal</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="cart-info">
+						<img src="image/offer1.jpg">
+						<div>
+							<p>Air Jordan 1 Retro High Dior</p>
+							<small>Price: $10000.00</small>
+							<br>
+							<a href="">Remove</a>
+						</div>
+					</div>
+				</td>
+				<td><input type="number" value="1"></td>
+				<td>$10000.00</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="cart-info">
+						<img src="image/product1.jpg">
+						<div>
+							<p>Air Jordan 1 Retro High Dior</p>
+							<small>Price: $10000.00</small>
+							<br>
+							<a href="">Remove</a>
+						</div>
+					</div>
+				</td>
+				<td><input type="number" value="1"></td>
+				<td>$10000.00</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="cart-info">
+						<img src="image/product2.jpg">
+						<div>
+							<p>Air Jordan 1 Retro High Dior</p>
+							<small>Price: $10000.00</small>
+							<br>
+							<a href="">Remove</a>
+						</div>
+					</div>
+				</td>
+				<td><input type="number" value="1"></td>
+				<td>$10000.00</td>
+			</tr>
+		</table>
+		<div class="total-price">
+			<table>
+				<tr>
+					<td>Subtotal</td>
+					<td>$30000.00</td>
+				</tr>
+				<tr>
+					<td>Tax</td>
+					<td>$0.00</td>
+				</tr>
+				<tr>
+					<td>Total</td>
+					<td>$30000.00</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<!-------- footer -------->
+
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="footer-col-1">
+					<h3>Download Our App</h3>
+					<p>Download App for Android and Ios mobile phone</p>
+					<div class="app-logo">
+						<img src="image/logo-app2.png">
+						<img src="image/logo-google.png">
+					</div>
+				</div>
+				<div class="footer-col-2">
+					<img src="image/logo.png">
+					<p>Our Purpose Is To Sustainable Make the Pleasure and Benefits of Sports Accessible to the Many. </p>
+				</div>
+				<div class="footer-col-3">
+					<h3>Useful Links</h3>
+					<ul>
+						<li>Coupons</li>
+						<li>Blog Post</li>
+						<li>Return Policy</li>
+						<li>Join Affliate</li>
+					</ul>
+				</div>
+				<div class="footer-col-4">
+					<h3>Follow us</h3>
+					<ul>
+						<li>Facebook</li>
+						<li>Twitter</li>
+						<li>Instagram</li>
+						<li>Youtube</li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+			<p class="copyright">Copyright 2020 - Easy Tutorials</p>
+		</div>
+	</div>
+
+	<!-------- js for toggle menu -------->
+
+	<script>
+		var menuitems = document.getElementById("menuitems");
+		menuitems.style.maxHeight = "0px";
+
+		function menutoggle(){
+			if(menuitems.style.maxHeight == "0px")
+				{
+					menuitems.style.maxHeight = "200px";
+				}
+			else
+				{
+					menuitems.style.maxHeight = "0px";
+				}
+		}
+	</script>
+
+</html>
+</body>

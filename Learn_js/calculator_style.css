@@ -1,0 +1,20 @@
+table{
+	background-color: grey;
+	margin: auto;
+}
+.btn{
+	width: 34px;
+	height: 34px;
+}
+#Result{
+	width: 180px;
+	height: 34px;
+}
+.btn1{
+	width: 34px;
+	height: 71px;
+}
+.btn2{
+	width: 71px;
+	height: 34px;
+}

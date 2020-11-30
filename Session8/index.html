@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Các đối tượng dựng sẵn trong JavaScript</title>
+</head>
+<body>
+	<script>
+		var n = 1234.645;
+		console.log(Math.ceil(n));
+		console.log(Math.round(n));
+		console.log(Math.floor(n));
+		console.log(Math.PI);
+		console.log(Math.sqrt(9));
+
+		var now = new Date(2020, 10, 30, 20, 45, 25);
+		console.log(now.toLocaleString());
+		console.log(now.toDateString());
+		console.log(Intl.DateTimeFormat("vi-VN").format(now));
+		console.log("Năm: " + now.getFullYear());
+		console.log("Tháng: " + (now.getMonth() + 1));
+		console.log("Ngày: " + now.getDate());
+		console.log("Giờ: " + now.getHours());
+		console.log("Phút: " + now.getMinutes());
+		console.log("Giây: " + now.getSeconds());
+
+		console.log(window.location.href);
+		//window.location.href = "https://google.com.vn";
+	</script>
+</body>
+</html>

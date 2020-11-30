@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hàm trong Javascript</title>
+</head>
+<body>
+	<script>
+		// Cú pháp định nghĩa hàm
+		function xinChao(ten) {
+			// Code của hàm
+			alert("Xin chào " + ten + "!");
+		}
+		// Gọi hàm
+		xinChao("Trung");
+		xinChao("Hoa");
+
+
+		// Hàm có kiểu trả về
+		function rutTien(matKhau, soTien) {
+			debugger;
+			if (matKhau == "123") {
+				return soTien;
+			} else {
+				alert("Sai mật khẩu!");
+				return 0;
+			}
+		}
+
+		// Gọi hàm có kiểu trả về
+		var vi = 0;
+		vi = rutTien("123", 5000);
+		alert("Trong ví có: " + vi);
+	</script>
+</body>
+</html>
